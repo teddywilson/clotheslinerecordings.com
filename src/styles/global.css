@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+a {
+    color: white;
+}
+
 html {
     background-color: black;
 }
 
 .flexbox-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.item {
-    margin: 16px;
+.logoMenuItem {
+    margin: 8px;
+    font-family: 'Lato';
 }

@@ -9,7 +9,7 @@ const LogoMenu = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/logo.jpg/" }) {
         childImageSharp {
-          fixed(width: 300, height: 300) {
+          fixed(width: 250, height: 250) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -27,26 +27,13 @@ const LogoMenu = () => {
 
   const { author } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        marginBottom: rhythm(2.5),
-        justifyContent: 'center', 
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-
-      }}>
+    <div>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}/>
-      <div class="flexbox-container"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}>
-        <div class="item"><a href="www.google.com">Artists</a></div>
-        <div class="item"><a href="www.google.com">Releases</a></div>
-      </div>
+        alt={author.name}
+        />
+        <div class="logoMenuItem"><a href="www.google.com">Artists</a></div>
+        <div class="logoMenuItem"><a href="www.google.com">Releases</a></div>
     </div>
   )
 }

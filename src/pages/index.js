@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle} style={{flexDirection: 'row', backgroundColor: '#00000'}}>
+    <Layout location={location} title={siteTitle}>
       <LogoMenu/>
     </Layout>
   )
