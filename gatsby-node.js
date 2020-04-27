@@ -4,7 +4,6 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.createPages = async({ graphql, actions }) => {
     const { createPage } = actions
 
-    const releaseTemplate = path.resolve(`./src/templates/release.js`)
     const result = await graphql(
         `
       {
@@ -37,15 +36,7 @@ exports.createPages = async({ graphql, actions }) => {
         const previous = index === releases.length - 1 ? null : releases[index + 1].node
         const next = index === 0 ? null : releases[index - 1].node
 
-        createPage({
-            path: release.node.fields.slug,
-            component: releaseTemplate,
-            context: {
-                slug: release.node.fields.slug,
-                previous,
-                next,
-            },
-        })
+
     })
 }
 
