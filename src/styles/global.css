@@ -1,0 +1,12 @@
+html {
+    background-color: black;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item {
+    margin: 16px;
+}

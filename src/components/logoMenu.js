@@ -4,12 +4,12 @@ import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
-const SideMenu = () => {
+const LogoMenu = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/logo.jpg/" }) {
         childImageSharp {
-          fixed(width: 160, height: 160) {
+          fixed(width: 300, height: 300) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -30,23 +30,25 @@ const SideMenu = () => {
     <div
       style={{
         marginBottom: rhythm(2.5),
-      }}
-    >
+        justifyContent: 'center', 
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+
+      }}>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-        }}
-      />
-      <br></br>
-      <a href="www.google.com">Artists</a>
-      <br></br>
-      <a href="www.google.com">Releases</a>
+        alt={author.name}/>
+      <div class="flexbox-container"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}>
+        <div class="item"><a href="www.google.com">Artists</a></div>
+        <div class="item"><a href="www.google.com">Releases</a></div>
+      </div>
     </div>
   )
 }
 
-export default SideMenu
+export default LogoMenu

@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import SideMenu from "../components/sideMenu"
+import LogoMenu from "../components/logoMenu"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const BlogIndex = ({ data, location }) => {
@@ -14,35 +13,8 @@ const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle} style={{flexDirection: 'row'}}>
-      <SEO title="All releases"/>
-      <SideMenu/>
-      Record label based out of Brooklyn, NYC
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 400),
-                }}
-              >
-                <a style={{ boxShadow: `none` }} href={node.frontmatter.bandcampUrl}>
-                  {title}
-                </a>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-            </header>
-            <section>
-              {/* <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }} */}
-            </section>
-          </article>
-        )
-      })}
+    <Layout location={location} title={siteTitle} style={{flexDirection: 'row', backgroundColor: '#00000'}}>
+      <LogoMenu/>
     </Layout>
   )
 }
