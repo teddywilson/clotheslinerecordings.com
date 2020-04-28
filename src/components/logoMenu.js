@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-
 const LogoMenu = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -24,13 +23,9 @@ const LogoMenu = () => {
     }
   `)
 
-  const { author } = data.site.siteMetadata
   return (
     <div>
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
-        />
+      <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name}/>
         <div class="logoMenuItem"><a href="www.google.com">Artists</a></div>
         <div class="logoMenuItem"><a href="www.google.com">Releases</a></div>
     </div>

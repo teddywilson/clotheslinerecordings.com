@@ -1,12 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import LogoMenu from "../components/logoMenu"
 import Layout from "../components/layout"
-import { rhythm } from "../utils/typography"
 
 const BlogIndex = ({ data, location }) => {
   
+  // TODO: unused
   const menuLinks = data.site.siteMetadata.menuLinks;
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges

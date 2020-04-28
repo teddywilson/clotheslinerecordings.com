@@ -10,8 +10,7 @@ const Layout = ({ location, title, children }) => {
       }}
     >
       <main>{children}</main>
-      <footer>
-      </footer>
+      <footer/>
     </div>
   )
 }

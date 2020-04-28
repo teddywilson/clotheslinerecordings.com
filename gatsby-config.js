@@ -17,7 +17,6 @@ module.exports = {
         ],
         author: {
             name: `Teddy Wilson`,
-            summary: `who lives and works in San Francisco building useful things.`,
         },
         siteUrl: `localhost:8000`,
     },
@@ -68,13 +67,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Gatsby Starter Blog`,
+                name: `Clothesline Recordings.`,
                 short_name: `GatsbyJS`,
                 start_url: `/`,
                 background_color: `#ffffff`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `content/assets/gatsby-icon.png`,
+                icon: `content/assets/logo.jpg`,
             },
         },
         `gatsby-plugin-react-helmet`,
