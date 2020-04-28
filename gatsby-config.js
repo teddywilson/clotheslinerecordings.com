@@ -20,7 +20,15 @@ module.exports = {
         },
         siteUrl: `localhost:8000`,
     },
-    plugins: [{
+    plugins: [
+          {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/artists`,
+                name: `artists`,
+            },
+        },
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: `${__dirname}/content/releases`,

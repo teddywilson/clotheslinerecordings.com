@@ -1,3 +1,3 @@
 ---
-name: Linocut
+name: "Linocut"
 ---

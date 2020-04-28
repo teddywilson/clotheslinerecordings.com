@@ -1,6 +1,6 @@
 import React from "react"
 
-const ArtistsList = ({ children }) => {
+const ReleasesList = ({ children }) => {
   return (
     <div>
         TODO: implement
@@ -8,4 +8,22 @@ const ArtistsList = ({ children }) => {
   )
 }
 
-export default ArtistsList
+export default ReleasesList
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/artists/"}}) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            name
+          }
+        }
+      }
+    }
+  }
+`
