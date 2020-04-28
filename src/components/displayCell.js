@@ -1,24 +1,33 @@
 import React from "react"
 
-const DisplayCell = ({ title, subtitle }) => {
+const DisplayCell = ({ image, title, subtitle }) => {
+  const imageName = require('../../content/assets/' + image)
   return (
     <div style={{
-      display: "flex",
-      flexDirection: "row",
       margin: 24,
-      padding: 16,
       borderWidth: 4,
-      borderColor: 'white',
-      borderStyle: 'dotted',
+      maxWidth: 500,
+      backgroundColor: "red",
     }}>
-        <div>
-          <h1>
-            {title}
-          </h1>
-          <h2>
-            {subtitle}
-          </h2>
-        </div>
+      <img
+        src={imageName}
+        style={{
+          width: '100%',
+          padding: 0,
+          margin: 0,
+        }}/>
+      <div style={{
+        backgroundColor: "white",
+        margin: 0,
+        padding: 0
+      }}>
+        <h1>
+          {title}
+        </h1>
+        <h2>
+          {subtitle}
+        </h2>
+      </div>
     </div>
   )
 }

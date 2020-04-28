@@ -16,6 +16,7 @@ const ArtistsList = ({ children }) => {
             }
             frontmatter {
               name
+              image
             }
           }
         }
@@ -31,6 +32,7 @@ const ArtistsList = ({ children }) => {
         <DisplayCell
           key={index}
           item={item}
+          image={item.node.frontmatter.image}
           title={item.node.frontmatter.name}/>
       ))}
     </div>

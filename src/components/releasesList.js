@@ -18,6 +18,7 @@ const ReleasesList = ({ children }) => {
               bandcampUrl
               catalogue
               title
+              image
             }
           }
         }
@@ -33,6 +34,7 @@ const ReleasesList = ({ children }) => {
         <DisplayCell
           key={index}
           item={item}
+          image={item.node.frontmatter.image}
           title={item.node.frontmatter.title}
           subtitle={item.node.frontmatter.catalogue}/>
       ))}

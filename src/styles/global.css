@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
 a {
     box-shadow: none;
     color: white;
@@ -10,29 +15,49 @@ h1,
 h2 {
     font-family: 'Lato';
     box-shadow: none;
-    color: white;
+    color: black;
     text-decoration: none;
+    margin-left: 16px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding: 0;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 16px;
 }
 
 html {
     background-color: black;
 }
 
-.flexbox-container {
-    flex-direction: column;
-    display: flex;
+.displayCellHeader .displayCellSubtitle {
+    font-family: 'Lato';
+    box-shadow: none;
+    color: white;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.displayCellHeader {
+    font-size: 24px;
+}
+
+.displayCellSubtitle {
+    font-size: 16px;
 }
 
 .logoMenuItem {
     font-family: 'Lato';
-    margin: 8px;
     padding-left: 32px;
+}
+
+.flexbox-container {
+    flex-direction: column;
+    display: flex;
 }
