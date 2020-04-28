@@ -16,6 +16,7 @@ const ReleasesList = ({ children }) => {
             }
             frontmatter {
               bandcampUrl
+              catalogue
               title
             }
           }
@@ -32,7 +33,8 @@ const ReleasesList = ({ children }) => {
         <DisplayCell
           key={index}
           item={item}
-          title={item.node.frontmatter.title}/>
+          title={item.node.frontmatter.title}
+          subtitle={item.node.frontmatter.catalogue}/>
       ))}
     </div>
   )
