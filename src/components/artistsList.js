@@ -1,29 +1,39 @@
 import React from "react"
 
-const ReleasesList = ({ children }) => {
-  return (
-    <div>
-        TODO: implement
-    </div>
-  )
-}
+import { useStaticQuery, graphql } from "gatsby"
 
-export default ReleasesList
+const ArtistsList = ({ children }) => {
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/artists/"}}) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            name
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/artists/"}}) {
+        edges {
+          node {
+            excerpt
+            fields {
+              slug
+            }
+            frontmatter {
+              name
+            }
           }
         }
       }
     }
-  }
-`
+  `);
+
+  const artists = data.allMarkdownRemark.edges
+
+  return (
+    <div>
+      {artists.map((item, index) => (
+        // TODO style
+        <h1 key={index} item={item}>
+          {item.node.frontmatter.name}
+        </h1>
+      ))}
+    </div>
+  )
+}
+
+export default ArtistsList
