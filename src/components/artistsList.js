@@ -1,6 +1,7 @@
 import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
+import DisplayCell from "./displayCell"
 
 const ArtistsList = ({ children }) => {
 
@@ -27,10 +28,10 @@ const ArtistsList = ({ children }) => {
   return (
     <div>
       {artists.map((item, index) => (
-        // TODO style
-        <h1 key={index} item={item}>
-          {item.node.frontmatter.name}
-        </h1>
+        <DisplayCell
+          key={index}
+          item={item}
+          title={item.node.frontmatter.name}/>
       ))}
     </div>
   )

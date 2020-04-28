@@ -1,6 +1,7 @@
 import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
+import DisplayCell from "./displayCell"
 
 const ReleasesList = ({ children }) => {
 
@@ -15,6 +16,7 @@ const ReleasesList = ({ children }) => {
             }
             frontmatter {
               bandcampUrl
+              title
             }
           }
         }
@@ -24,15 +26,13 @@ const ReleasesList = ({ children }) => {
 
   const releases = data.allMarkdownRemark.edges
 
-  console.log('releases: ', releases)
-
   return (
     <div>
       {releases.map((item, index) => (
-        // TODO style
-        <h1 key={index} item={item}>
-          {item.node.frontmatter.bandcampUrl}
-        </h1>
+        <DisplayCell
+          key={index}
+          item={item}
+          title={item.node.frontmatter.title}/>
       ))}
     </div>
   )
