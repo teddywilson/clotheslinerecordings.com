@@ -9,11 +9,10 @@ const BlogIndex = ({ data, location }) => {
   
   const menuLinks = data.site.siteMetadata.menuLinks;
   const siteTitle = data.site.siteMetadata.title
-
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout>
       <LogoMenu/>
     </Layout>
   )
