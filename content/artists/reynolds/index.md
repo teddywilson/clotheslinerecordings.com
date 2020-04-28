@@ -1,4 +1,4 @@
 ---
 name: reynolds
-image: beagle.jpg
+image: reynolds.jpg
 ---

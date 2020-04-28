@@ -1,4 +1,4 @@
 ---
 name: "Linocut"
-image: logo_test.jpg
+image: linocut.jpg
 ---

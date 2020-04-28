@@ -5,28 +5,32 @@ const DisplayCell = ({ image, title, subtitle }) => {
   return (
     <div style={{
       margin: 24,
-      borderWidth: 4,
-      maxWidth: 500,
-      backgroundColor: "red",
+      display: 'flex',
+      justifyContent: 'center'
     }}>
-      <img
-        src={imageName}
-        style={{
-          width: '100%',
-          padding: 0,
-          margin: 0,
-        }}/>
       <div style={{
-        backgroundColor: "white",
-        margin: 0,
-        padding: 0
+        maxWidth: 430,
+        backgroundColor: "red",
       }}>
-        <h1>
-          {title}
-        </h1>
-        <h2>
-          {subtitle}
-        </h2>
+        <img
+          src={imageName}
+          style={{
+            width: '100%',
+            padding: 0,
+            margin: 0,
+          }}/>
+        <div style={{
+          backgroundColor: 'white',
+          margin: 0,
+          padding: 8
+        }}>
+          <h1>
+            {title}
+          </h1>
+          <h2>
+            [{subtitle}]
+          </h2>
+      </div>  
       </div>
     </div>
   )
