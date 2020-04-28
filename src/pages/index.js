@@ -1,16 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import LogoMenu from "../components/logoMenu"
 import Layout from "../components/layout"
+import LogoMenu from "../components/logoMenu"
 
-const BlogIndex = ({ data, location }) => {
-  
-  // TODO: unused
-  const menuLinks = data.site.siteMetadata.menuLinks;
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
-
+const Index = ({ data, location }) => {
   return (
     <Layout>
       <LogoMenu/>
@@ -18,7 +12,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {

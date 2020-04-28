@@ -1,6 +1,6 @@
 import React from "react"
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ children }) => {
   return (
     <div>
       <main>{children}</main>
