@@ -12,20 +12,12 @@ const LogoMenu = () => {
           }
         }
       }
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-        }
-      }
     }
   `)
 
   return (
     <div>
-      <Image fixed={data.avatar.childImageSharp.fixed} alt={author.name}/>
+      <Image fixed={data.avatar.childImageSharp.fixed}/>
         <div class="logoMenuItem"><a href="www.google.com">Artists</a></div>
         <div class="logoMenuItem"><a href="www.google.com">Releases</a></div>
     </div>
