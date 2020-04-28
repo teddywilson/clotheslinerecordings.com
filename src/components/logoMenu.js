@@ -22,6 +22,9 @@ const LogoMenu = () => {
         to="/artists"
         className="logoMenuItem">Artists</Link>
       <Link 
+        to="/"
+        className="logoMenuItem">/</Link>  
+      <Link 
         to="/releases"
         className="logoMenuItem">Releases</Link>  
     </div>
