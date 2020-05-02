@@ -16,7 +16,9 @@ module.exports = {
           }
         ],
         author: {
-            name: `Teddy Wilson`,
+            name: `Clothesline Recordings`,
+            email: `clotheslinerecordings@gmail.com`,
+            address: `Brooklyn, NYC, 11238`
         },
         siteUrl: `localhost:8000`,
     },
@@ -42,6 +44,13 @@ module.exports = {
                 name: `assets`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/content/global`,
+                name: `global`,
+            },
+        },        
         {
             resolve: `gatsby-transformer-remark`,
             options: {
