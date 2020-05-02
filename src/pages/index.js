@@ -8,6 +8,7 @@ const Index = ({ data, location }) => {
   return (
     <Layout>
       <LogoMenu/>
+      <h1>Clothesline Recordings is a record label based out of Brooklyn, NYC.</h1>
     </Layout>
   )
 }

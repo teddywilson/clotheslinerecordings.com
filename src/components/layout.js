@@ -1,10 +1,12 @@
 import React from "react"
 
+import Footer from "./footer"
+
 const Layout = ({ children }) => {
   return (
     <div>
       <main>{children}</main>
-      <footer/>
+      <Footer/>
     </div>
   )
 }
