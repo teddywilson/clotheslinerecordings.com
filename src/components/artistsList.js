@@ -2,6 +2,8 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 import DisplayCell from "./displayCell"
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 
 const ArtistsList = ({ children }) => {
 
@@ -28,13 +30,17 @@ const ArtistsList = ({ children }) => {
 
   return (
     <div>
-      {artists.map((item, index) => (
-        <DisplayCell
-          key={index}
-          item={item}
-          image={item.node.frontmatter.image}
-          title={item.node.frontmatter.name}/>
-      ))}
+        <GridList cellHeight="auto" cols={3}>
+        {artists.map((item, index) => (
+          <GridListTile key={index}>
+            <DisplayCell
+              key={index}
+              item={item}
+              image={item.node.frontmatter.image}
+              title={item.node.frontmatter.name}/>
+          </GridListTile>
+        ))}
+      </GridList>    
     </div>
   )
 }

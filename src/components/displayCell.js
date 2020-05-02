@@ -12,13 +12,16 @@ const DisplayCell = ({ image, title, subtitle }) => {
         maxWidth: 430,
         backgroundColor: "red",
       }}>
-        <img
-          src={imageName}
-          style={{
-            width: '100%',
-            padding: 0,
-            margin: 0,
-          }}/>
+        <div class="thumbnail">
+          <img
+            src={imageName}
+            style={{
+              width: '100%',
+              padding: 0,
+              margin: 0,
+              overflow: 'hidden'
+            }}/>
+        </div>
         <div style={{
           backgroundColor: 'white',
           margin: 0,
@@ -28,7 +31,7 @@ const DisplayCell = ({ image, title, subtitle }) => {
             {title}
           </h1>
           <h2>
-            [{subtitle}]
+            {subtitle}]
           </h2>
       </div>  
       </div>

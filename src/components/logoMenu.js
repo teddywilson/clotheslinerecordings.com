@@ -17,7 +17,10 @@ const LogoMenu = () => {
 
   return (
     <div>
-      <Image fixed={data.avatar.childImageSharp.fixed}/>
+      <Link
+        to="/">
+        <Image fixed={data.avatar.childImageSharp.fixed}/>
+      </Link>
       <Link 
         to="/artists"
         className="logoMenuItem">Artists</Link>
