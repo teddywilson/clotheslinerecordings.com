@@ -10,6 +10,7 @@ const DisplayCell = ({ image, title, subtitle }) => {
     }}>
       <div style={{
         maxWidth: 430,
+        maxHeight: 450,
         backgroundColor: "red",
       }}>
         <div class="thumbnail">
@@ -31,7 +32,7 @@ const DisplayCell = ({ image, title, subtitle }) => {
             {title}
           </h1>
           <h2>
-            {subtitle}]
+            {subtitle}
           </h2>
       </div>  
       </div>

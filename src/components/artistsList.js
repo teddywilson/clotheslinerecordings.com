@@ -2,7 +2,7 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 import DisplayCell from "./displayCell"
-import GridList from '@material-ui/core/GridList';
+import DisplayGridList from "./displayGridList"
 import GridListTile from '@material-ui/core/GridListTile';
 
 const ArtistsList = ({ children }) => {
@@ -29,8 +29,7 @@ const ArtistsList = ({ children }) => {
   const artists = data.allMarkdownRemark.edges
 
   return (
-    <div>
-        <GridList cellHeight="auto" cols={3}>
+    <DisplayGridList>
         {artists.map((item, index) => (
           <GridListTile key={index}>
             <DisplayCell
@@ -40,8 +39,7 @@ const ArtistsList = ({ children }) => {
               title={item.node.frontmatter.name}/>
           </GridListTile>
         ))}
-      </GridList>    
-    </div>
+    </DisplayGridList>
   )
 }
 

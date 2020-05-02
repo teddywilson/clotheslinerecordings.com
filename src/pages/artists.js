@@ -9,9 +9,7 @@ const Artists = () => {
   return (
     <Layout>
         <LogoMenu/>
-        {/* <div style={{display: 'flex', justifyContent: 'center'}}>
-          <ArtistsList/>
-        </div> */}
+        <ArtistsList/>
     </Layout>
   )
 }

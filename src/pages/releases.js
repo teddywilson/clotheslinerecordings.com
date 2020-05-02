@@ -9,7 +9,7 @@ const Releases = () => {
   return (
     <Layout>
         <LogoMenu/>
-        {/* <ReleasesList/> */}
+        <ReleasesList/>
     </Layout>
   )
 }
