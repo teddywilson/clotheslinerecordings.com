@@ -1,40 +1,32 @@
 import React from "react"
 
 const DisplayCell = ({ image, title, subtitle }) => {
-  const imageName = require('../../content/assets/' + image)
+  // TODO: fetch this from GraphQL
+  const imageName = require("../../content/assets/" + image)
   return (
-    <div style={{
-      margin: 24,
-      display: 'flex',
-      justifyContent: 'center'
-    }}>
-      <div style={{
-        maxWidth: 430,
-        maxHeight: 450,
-        backgroundColor: "red",
-      }}>
-        <div class="thumbnail">
-          <img
-            src={imageName}
-            style={{
-              width: '100%',
-              padding: 0,
-              margin: 0,
-              overflow: 'hidden'
-            }}/>
+    <div
+      style={{
+        marginLeft: "8%",
+        backgroundColor: "white",
+        paddingBottom: "8px"
+      }}
+    >
+      <div>
+        <img
+          src={imageName}
+          style={{
+            margin: 0,
+            bottom: 0
+          }}
+        />
+        <div
+          style={{
+            margin: 0
+          }}
+        >
+          <h1>{title}</h1>
+          <h2>{subtitle}</h2>
         </div>
-        <div style={{
-          backgroundColor: 'white',
-          margin: 0,
-          padding: 8
-        }}>
-          <h1>
-            {title}
-          </h1>
-          <h2>
-            {subtitle}
-          </h2>
-      </div>  
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +13,7 @@ a {
 
 h1,
 h2 {
-    font-family: 'Consolas';
+    font-family: "Lato";
     box-shadow: none;
     color: black;
     text-decoration: none;
@@ -25,7 +25,7 @@ h2 {
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 72px;
 }
 
 h2 {
@@ -38,11 +38,11 @@ html {
 
 html,
 body {
-    height: 100%
+    height: 100%;
 }
 
 .displayCellHeader .displayCellSubtitle {
-    font-family: 'Lato';
+    font-family: "Lato";
     box-shadow: none;
     color: white;
     text-decoration: none;
@@ -62,39 +62,22 @@ body {
 }
 
 .footerHeader {
-    font-family: 'Lato';
+    font-family: "Lato";
     font-size: 24px;
     font-weight: 900;
 }
 
 .footerSubtext {
-    font-family: 'Lato';
+    font-family: "Lato";
 }
 
 .logoMenuItem {
-    font-family: 'Lato';
+    font-family: "Lato";
     padding-left: 32px;
+    padding-right: 32px;
 }
 
 .flexbox-container {
     flex-direction: column;
     display: flex;
-}
-
-.thumbnail {
-    position: relative;
-    width: 100vh;
-    height: 1000px;
-    overflow: hidden;
-}
-
-.thumbnail img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 100%;
-    width: auto;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }

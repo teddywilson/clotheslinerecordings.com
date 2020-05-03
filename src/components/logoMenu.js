@@ -15,21 +15,38 @@ const LogoMenu = () => {
     }
   `)
 
+  const textStyles = {
+    border: `1px solid black`
+  }
+
+  const activeTextStyles = {
+    border: `1px dotted white`
+  }
+
   return (
     <div>
-      <Link
-        to="/">
-        <Image fixed={data.avatar.childImageSharp.fixed}/>
+      <Link to="/">
+        <Image fixed={data.avatar.childImageSharp.fixed} />
       </Link>
-      <Link 
+      <Link
         to="/artists"
-        className="logoMenuItem">Artists</Link>
-      <Link 
-        to="/"
-        className="logoMenuItem">/</Link>  
-      <Link 
+        className="logoMenuItem"
+        style={textStyles}
+        activeStyle={activeTextStyles}
+      >
+        Artists
+      </Link>
+      <Link to="/" className="logoMenuItem">
+        /
+      </Link>
+      <Link
         to="/releases"
-        className="logoMenuItem">Releases</Link>  
+        className="logoMenuItem"
+        style={textStyles}
+        activeStyle={activeTextStyles}
+      >
+        Releases
+      </Link>
     </div>
   )
 }
