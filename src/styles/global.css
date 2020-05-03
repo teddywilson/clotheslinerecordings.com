@@ -59,12 +59,13 @@ body {
 
 .footerContainer {
     padding: 56px;
+    border-top: 16px dashed red;
 }
 
 .footerHeader {
     font-family: "Lato";
     font-size: 24px;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .footerSubtext {
