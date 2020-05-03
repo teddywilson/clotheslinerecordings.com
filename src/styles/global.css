@@ -83,7 +83,18 @@ body {
     font-family: "Lato";
     padding-left: 32px;
     padding-right: 32px;
-    font-size: 64px;
+    font-size: 32px;
+}
+
+.logoMenuSlashNavigationMenuItem {
+    visibility: hidden;
+    height: 0px;
+}
+
+.logoMenuNavigationContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
 }
 
 .flexbox-container {
@@ -102,5 +113,21 @@ body {
     .displayCellContainer {
         padding-left: 24%;
         padding-right: 24%;
+    }
+    .logoMenuItem {
+        font-size: 64px;
+    }
+    .logoMenuNavigationContainer {
+        display: flex;
+        flex-direction: row;
+    }
+    .logoMenuSlashNavigationMenuItem {
+        font-family: "Lato";
+        padding-left: 32px;
+        padding-right: 32px;
+        font-size: 64px;
+        visibility: visible;
+        height: auto;
+        bottom: 0;
     }
 }

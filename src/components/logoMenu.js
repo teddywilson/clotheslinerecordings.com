@@ -25,28 +25,34 @@ const LogoMenu = () => {
 
   return (
     <div>
-      <Link to="/">
-        <Image fixed={data.avatar.childImageSharp.fixed} />
-      </Link>
-      <Link
-        to="/artists"
-        className="logoMenuItem"
-        style={textStyles}
-        activeStyle={activeTextStyles}
-      >
-        Artists
-      </Link>
-      <Link to="/" className="logoMenuItem">
-        /
-      </Link>
-      <Link
-        to="/releases"
-        className="logoMenuItem"
-        style={textStyles}
-        activeStyle={activeTextStyles}
-      >
-        Releases
-      </Link>
+      <Image
+        fixed={data.avatar.childImageSharp.fixed}
+        style={{
+          margin: 0,
+          padding: 0
+        }}
+      />
+      <div className="logoMenuNavigationContainer">
+        <Link
+          to="/artists"
+          className="logoMenuItem"
+          style={textStyles}
+          activeStyle={activeTextStyles}
+        >
+          Artists
+        </Link>
+        <Link to="/" className="logoMenuSlashNavigationMenuItem">
+          /
+        </Link>
+        <Link
+          to="/releases"
+          className="logoMenuItem"
+          style={textStyles}
+          activeStyle={activeTextStyles}
+        >
+          Releases
+        </Link>
+      </div>
     </div>
   )
 }
