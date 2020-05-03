@@ -5,11 +5,10 @@ import LogoMenu from "../components/logoMenu"
 import ReleasesList from "../components/releasesList"
 
 const Releases = () => {
-
   return (
     <Layout>
-        <LogoMenu/>
-        <ReleasesList/>
+      <LogoMenu />
+      <ReleasesList />
     </Layout>
   )
 }

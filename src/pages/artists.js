@@ -5,11 +5,10 @@ import LogoMenu from "../components/logoMenu"
 import ArtistsList from "../components/artistsList"
 
 const Artists = () => {
-
   return (
     <Layout>
-        <LogoMenu/>
-        <ArtistsList/>
+      <LogoMenu />
+      <ArtistsList />
     </Layout>
   )
 }
