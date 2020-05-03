@@ -83,3 +83,15 @@ body {
     flex-direction: column;
     display: flex;
 }
+
+@media (min-width: 250px) {
+    .displayGridList {
+        columns: 1;
+    }
+}
+
+@media (min-width: 500px) {
+    .displayGridList {
+        columns: 1;
+    }
+}

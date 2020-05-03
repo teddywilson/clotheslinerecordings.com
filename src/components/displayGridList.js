@@ -5,7 +5,14 @@ import GridList from "@material-ui/core/GridList"
 const DisplayGridList = ({ children }) => {
   return (
     <div>
-      <GridList cellHeight="auto" cols={3}>
+      <GridList
+        cellHeight="auto"
+        cols={1}
+        style={{
+          margin: 0,
+          padding: 0
+        }}
+      >
         {children}
       </GridList>
     </div>

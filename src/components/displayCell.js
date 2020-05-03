@@ -6,7 +6,10 @@ const DisplayCell = ({ image, title, subtitle }) => {
   return (
     <div
       style={{
-        padding: "8%"
+        paddingLeft: "16%",
+        paddingTop: "4%",
+        paddingRight: "16%",
+        paddingBottom: "4%"
       }}
     >
       <div>
