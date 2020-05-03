@@ -16,11 +16,11 @@ const LogoMenu = () => {
   `)
 
   const textStyles = {
-    border: `1px solid black`
+    border: `8px solid black`
   }
 
   const activeTextStyles = {
-    border: `16px dashed white`
+    border: `8px dashed white`
   }
 
   return (
