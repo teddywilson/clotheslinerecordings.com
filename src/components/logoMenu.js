@@ -20,7 +20,7 @@ const LogoMenu = () => {
   }
 
   const activeTextStyles = {
-    border: `1px dotted white`
+    border: `16px dashed white`
   }
 
   return (
