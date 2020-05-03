@@ -41,20 +41,27 @@ body {
     height: 100%;
 }
 
-.displayCellHeader .displayCellSubtitle {
-    font-family: "Lato";
-    box-shadow: none;
-    color: white;
-    text-decoration: none;
-    margin-left: 16px;
+.displayCellContainer {
+    padding-left: 8%;
+    padding-top: 1%;
+    padding-right: 8%;
+    padding-bottom: 1%;
 }
 
 .displayCellHeader {
     font-size: 24px;
+    font-family: "Lato";
+    box-shadow: none;
+    color: white;
+    text-decoration: none;
 }
 
 .displayCellSubtitle {
     font-size: 16px;
+    font-family: "Lato";
+    box-shadow: none;
+    color: white;
+    text-decoration: none;
 }
 
 .footerContainer {
@@ -84,14 +91,16 @@ body {
     display: flex;
 }
 
-@media (min-width: 250px) {
-    .displayGridList {
-        columns: 1;
+@media (min-width: 375px) {
+    .displayCellContainer {
+        padding-left: 16%;
+        padding-right: 16%;
     }
 }
 
-@media (min-width: 500px) {
-    .displayGridList {
-        columns: 1;
+@media (min-width: 750px) {
+    .displayCellContainer {
+        padding-left: 24%;
+        padding-right: 24%;
     }
 }
