@@ -18,8 +18,8 @@ const ReleasesList = ({ children }) => {
             frontmatter {
               bandcampUrl
               catalogue
-              title
               image
+              title
             }
           }
         }
@@ -39,6 +39,9 @@ const ReleasesList = ({ children }) => {
             image={item.node.frontmatter.image}
             title={item.node.frontmatter.title}
             subtitle={item.node.frontmatter.catalogue}
+            onClickListener={() => {
+              window.open(item.node.frontmatter.bandcampUrl, "_blank")
+            }}
           />
         </GridListTile>
       ))}
