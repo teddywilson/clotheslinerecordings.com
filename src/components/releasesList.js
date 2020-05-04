@@ -3,6 +3,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import DisplayCell from "./displayCell"
 import DisplayGridList from "./displayGridList"
+
 import GridListTile from "@material-ui/core/GridListTile"
 
 const ReleasesList = ({ children }) => {
