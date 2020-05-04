@@ -13,6 +13,10 @@ const Footer = () => {
     }
   `)
 
+  const address = data.markdownRemark.frontmatter.address
+  const email = data.markdownRemark.frontmatter.email
+  const hred = "mailto:".concat(email)
+
   return (
     <div
       className="footerContainer"
@@ -22,11 +26,9 @@ const Footer = () => {
     >
       <div className="footerHeader">Contact</div>
       <div className="footerSubtext">
-        {data.markdownRemark.frontmatter.email}
+        <a href={hred}>{email}</a>
       </div>
-      <div className="footerSubtext">
-        {data.markdownRemark.frontmatter.address}
-      </div>
+      <div className="footerSubtext">{address}</div>
     </div>
   )
 }

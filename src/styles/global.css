@@ -6,13 +6,6 @@
     font-family: "Karla";
 }
 
-a {
-    box-shadow: none;
-    color: white;
-    text-decoration: none;
-    font-size: 96px;
-}
-
 html {
     background-color: black;
 }
@@ -63,11 +56,17 @@ body {
     padding-left: 24px;
     padding-right: 24px;
     font-size: 32px;
+    box-shadow: none;
+    color: white;
+    text-decoration: none;
 }
 
 .logoMenuSlashNavigationMenuItem {
     visibility: hidden;
     height: 0px;
+    box-shadow: none;
+    color: white;
+    text-decoration: none;
 }
 
 .logoMenuNavigationContainer {
