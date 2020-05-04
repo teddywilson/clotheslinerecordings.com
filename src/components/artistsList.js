@@ -16,7 +16,7 @@ const ArtistsList = ({ children }) => {
               slug
             }
             frontmatter {
-              bandcampUrl
+              artistUrl
               image
               name
             }
@@ -38,7 +38,7 @@ const ArtistsList = ({ children }) => {
             image={item.node.frontmatter.image}
             title={item.node.frontmatter.name}
             onClickListener={() => {
-              window.open(item.node.frontmatter.bandcampUrl, "_blank")
+              window.open(item.node.frontmatter.artistUrl, "_blank")
             }}
           />
         </GridListTile>

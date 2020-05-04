@@ -1,5 +1,5 @@
 ---
-name: Family Vision
+artistUrl: "https://familyvision.bandcamp.com/"
 image: family_vision.jpg
-bandcampUrl: "https://familyvision.bandcamp.com/"
+name: Family Vision
 ---
