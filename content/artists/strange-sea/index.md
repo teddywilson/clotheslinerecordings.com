@@ -1,5 +1,5 @@
 ---
 artistUrl: "https://soundcloud.com/strangesea/"
-image: reynolds.jpg
+image: strange_sea.jpeg
 name: Strange Sea
 ---

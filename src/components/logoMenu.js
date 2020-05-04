@@ -29,6 +29,7 @@ const LogoMenu = () => {
         fixed={data.avatar.childImageSharp.fixed}
         style={{
           margin: 0,
+          marginLeft: 16,
           padding: 0
         }}
       />

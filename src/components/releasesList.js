@@ -16,6 +16,7 @@ const ReleasesList = ({ children }) => {
               slug
             }
             frontmatter {
+              artist
               bandcampUrl
               catalogue
               image
@@ -31,20 +32,24 @@ const ReleasesList = ({ children }) => {
 
   return (
     <DisplayGridList>
-      {releases.map((item, index) => (
-        <GridListTile key={index}>
-          <DisplayCell
-            key={index}
-            item={item}
-            image={item.node.frontmatter.image}
-            title={item.node.frontmatter.title}
-            subtitle={item.node.frontmatter.catalogue}
-            onClickListener={() => {
-              window.open(item.node.frontmatter.bandcampUrl, "_blank")
-            }}
-          />
-        </GridListTile>
-      ))}
+      {releases.map((item, index) => {
+        const data = item.node.frontmatter
+        const subtitle = data.artist + ", " + data.catalogue
+        return (
+          <GridListTile key={index}>
+            <DisplayCell
+              key={index}
+              item={item}
+              image={data.image}
+              title={data.title}
+              subtitle={subtitle}
+              onClickListener={() => {
+                window.open(data.bandcampUrl, "_blank")
+              }}
+            />
+          </GridListTile>
+        )
+      })}
     </DisplayGridList>
   )
 }
