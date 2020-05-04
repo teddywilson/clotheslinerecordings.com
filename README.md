@@ -10,9 +10,6 @@ gatsby develop
 
 ## Deploy
 ```
-gatsby clean
-yarn install
-gatsby build
-firebase deploy
+./deploy.sh
 ```
 
