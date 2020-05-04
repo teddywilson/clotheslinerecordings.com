@@ -8,8 +8,10 @@ const DisplayCell = ({ image, title, subtitle, onClickListener }) => {
       <div>
         <img src={imageName} />
       </div>
-      <div className="displayCellHeader">{title}</div>
-      <div className="displayCellSubtitle">{subtitle}</div>
+      <div className="displayCellTextContainer">
+        <div className="displayCellHeader">{title}</div>
+        <div className="displayCellSubtitle">{subtitle}</div>
+      </div>
     </div>
   )
 }
