@@ -7,7 +7,7 @@ const LogoMenu = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/logo.jpg/" }) {
         childImageSharp {
-          fixed(width: 300, height: 300) {
+          fixed(width: 270, height: 270) {
             ...GatsbyImageSharpFixed
           }
         }
