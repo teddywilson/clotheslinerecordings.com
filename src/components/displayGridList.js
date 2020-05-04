@@ -10,7 +10,8 @@ const DisplayGridList = ({ children }) => {
         cols={1}
         style={{
           margin: 0,
-          padding: 0
+          padding: 0,
+          marginBottom: 64
         }}
       >
         {children}
