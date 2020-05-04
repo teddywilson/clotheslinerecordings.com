@@ -1,4 +1,5 @@
-# Deploys Gatsby build to firebase
+# Deploys a clean Gatsby build to Firebase
+# Requires Gatsby and Firebase CLI
 #
 #!/bin/bash
 
