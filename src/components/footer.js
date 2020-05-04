@@ -20,9 +20,13 @@ const Footer = () => {
         backgroundColor: "white"
       }}
     >
-      <div class="footerHeader">Contact</div>
-      <div class="footerSubtext">{data.markdownRemark.frontmatter.email}</div>
-      <div class="footerSubtext">{data.markdownRemark.frontmatter.address}</div>
+      <div className="footerHeader">Contact</div>
+      <div className="footerSubtext">
+        {data.markdownRemark.frontmatter.email}
+      </div>
+      <div className="footerSubtext">
+        {data.markdownRemark.frontmatter.address}
+      </div>
     </div>
   )
 }

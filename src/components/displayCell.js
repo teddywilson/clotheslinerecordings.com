@@ -6,7 +6,12 @@ const DisplayCell = ({ image, title, subtitle, onClickListener }) => {
   return (
     <div className="displayCellContainer" onClick={onClickListener}>
       <div>
-        <img src={imageName} />
+        <img
+          src={imageName}
+          style={{
+            width: "100%"
+          }}
+        />
       </div>
       <div className="displayCellTextContainer">
         <div className="displayCellHeader">{title}</div>

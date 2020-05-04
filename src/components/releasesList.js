@@ -9,7 +9,10 @@ import GridListTile from "@material-ui/core/GridListTile"
 const ReleasesList = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/releases/" } }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/releases/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
         edges {
           node {
             excerpt
@@ -20,6 +23,7 @@ const ReleasesList = ({ children }) => {
               artist
               bandcampUrl
               catalogue
+              date
               image
               title
             }
