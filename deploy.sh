@@ -6,4 +6,3 @@
 gatsby clean
 gatsby build
 firebase deploy
-
