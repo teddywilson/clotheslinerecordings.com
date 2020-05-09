@@ -76,11 +76,6 @@ body {
     transform: translateY(-35%);
 }
 
-.flexbox-container {
-    flex-direction: column;
-    display: flex;
-}
-
 @media (min-width: 375px) {
     .displayCellContainer {
         padding-left: 16%;
@@ -108,5 +103,12 @@ body {
         visibility: visible;
         height: auto;
         bottom: 0;
+    }
+}
+
+@media (min-width: 1500px) {
+    .displayCellContainer {
+        padding-left: 30%;
+        padding-right: 40%;
     }
 }

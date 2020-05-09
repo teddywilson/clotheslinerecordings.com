@@ -23,8 +23,6 @@ const LogoMenu = () => {
     border: `8px dashed white`
   }
 
-  const isArtistsCurrent = true
-
   return (
     <div>
       <Image
@@ -41,7 +39,6 @@ const LogoMenu = () => {
           className="logoMenuItem"
           style={textStyles}
           activeStyle={activeTextStyles}
-          isCurrent={true}
         >
           Artists
         </Link>
