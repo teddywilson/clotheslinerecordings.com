@@ -5,9 +5,9 @@ import Image from "gatsby-image"
 const LogoMenu = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/logo.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/logo_2_2.jpeg/" }) {
         childImageSharp {
-          fixed(width: 250, height: 250) {
+          fixed(width: 162, height: 162) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -29,14 +29,17 @@ const LogoMenu = () => {
 
   return (
     <div>
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        style={{
-          margin: 0,
-          marginLeft: 16,
-          padding: 0
-        }}
-      />
+      <Link to="/">
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          style={{
+            margin: 0,
+            marginTop: 16,
+            marginLeft: 48,
+            padding: 0
+          }}
+        />
+      </Link>
       <div className="logoMenuNavigationContainer">
         <Link
           to="/artists/"
