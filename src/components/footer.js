@@ -15,14 +15,22 @@ const Footer = () => {
         frontmatter {
           address
           email
+          facebookUrl
+          instagramUrl
+          youtubeUrl
         }
       }
     }
   `)
 
   const address = data.markdownRemark.frontmatter.address
+
   const email = data.markdownRemark.frontmatter.email
   const hred = "mailto:".concat(email)
+
+  const facebookUrl = data.markdownRemark.frontmatter.facebookUrl
+  const instagramUrl = data.markdownRemark.frontmatter.instagramUrl
+  const youtubeUrl = data.markdownRemark.frontmatter.youtubeUrl
 
   return (
     <div
@@ -48,8 +56,8 @@ const Footer = () => {
           className="socialIcon"
           icon={faFacebook}
           size="lg"
-          onClickListener={() => {
-            window.open(data.node.frontmatter.facebookUrl, "_blank")
+          onClick={() => {
+            window.open(facebookUrl, "_blank")
           }}
         />
         <FontAwesomeIcon
@@ -60,16 +68,16 @@ const Footer = () => {
             paddingLeft: 4,
             paddingRight: 4
           }}
-          onClickListener={() => {
-            window.open(data.node.frontmatter.instgramUrl, "_blank")
+          onClick={() => {
+            window.open(instagramUrl, "_blank")
           }}
         />
         <FontAwesomeIcon
           className="socialIcon"
           icon={faYoutube}
           size="lg"
-          onClickListener={() => {
-            window.open(data.node.frontmatter.youtubeUrl, "_blank")
+          onClick={() => {
+            window.open(youtubeUrl, "_blank")
           }}
         />
       </div>
