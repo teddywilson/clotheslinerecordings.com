@@ -11,7 +11,7 @@ const DisplayGridList = ({ children }) => {
         style={{
           margin: 0,
           padding: 0,
-          marginBottom: 64
+          marginBottom: 32
         }}
       >
         {children}
