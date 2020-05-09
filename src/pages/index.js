@@ -10,6 +10,10 @@ import LogoMenu from "../components/logoMenu"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const Index = ({ location }) => {
+  // TODO: move this to markdown file
+  const imageName = "ocsc.jpg"
+  const description =
+    "Clothesline Recordings was founded by Austin Morel, Kabir Kumar-Hardy, and Teddy Wilson in 2018 and is currently based in Brooklyn, NY."
   return (
     <Layout>
       <Helmet>
@@ -20,11 +24,7 @@ const Index = ({ location }) => {
       <LogoMenu location={location} />
       <DisplayGridList>
         <GridListTile>
-          <DisplayCell
-            image="ocsc.jpeg"
-            subtitle="Clothesline Recordings was founded by Austin Morel, Kabir Kumar-Hardy,
-        and Teddy Wilson in 2018 and is currently based in Brooklyn, NY."
-          />
+          <DisplayCell image={imageName} subtitle={description} />
         </GridListTile>
       </DisplayGridList>
     </Layout>
