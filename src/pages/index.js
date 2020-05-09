@@ -4,11 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import Layout from "../components/layout"
-import DisplayCell from "../components/displayCell"
-import DisplayGridList from "../components/displayGridList"
 import LogoMenu from "../components/logoMenu"
-
-import GridListTile from "@material-ui/core/GridListTile"
 
 const Index = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -28,11 +24,9 @@ const Index = ({ location }) => {
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
       <LogoMenu location={location} />
-      <DisplayGridList>
-        <GridListTile>
-          <DisplayCell subtitle={data.markdownRemark.frontmatter.description} />
-        </GridListTile>
-      </DisplayGridList>
+      <div className="indexBodyText">
+        {data.markdownRemark.frontmatter.description}
+      </div>
     </Layout>
   )
 }

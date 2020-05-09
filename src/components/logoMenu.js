@@ -16,11 +16,15 @@ const LogoMenu = () => {
   `)
 
   const textStyles = {
-    border: `8px solid black`
+    borderBottom: `8px solid black`
   }
 
-  const activeTextStyles = {
-    border: `8px dashed white`
+  const activeTextStylesDashedBorder = {
+    borderBottom: `8px dashed white`
+  }
+
+  const activeTextStylesSolidBorder = {
+    borderBottom: `8px solid white`
   }
 
   return (
@@ -38,7 +42,7 @@ const LogoMenu = () => {
           to="/artists/"
           className="logoMenuItem"
           style={textStyles}
-          activeStyle={activeTextStyles}
+          activeStyle={activeTextStylesDashedBorder}
         >
           Artists
         </Link>
@@ -49,7 +53,7 @@ const LogoMenu = () => {
           to="/releases/"
           className="logoMenuItem"
           style={textStyles}
-          activeStyle={activeTextStyles}
+          activeStyle={activeTextStylesSolidBorder}
         >
           Releases
         </Link>

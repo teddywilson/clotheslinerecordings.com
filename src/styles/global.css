@@ -52,9 +52,18 @@ body {
     font-weight: bold;
 }
 
+.indexBodyText {
+    box-shadow: none;
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+    text-decoration: none;
+    padding: 56px;
+}
+
 .logoMenuItem {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 8px;
+    padding-right: 8px;
     font-size: 32px;
     box-shadow: none;
     color: white;
@@ -73,7 +82,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(-35%);
+    transform: translateY(-45%);
 }
 
 .socialIcon {
@@ -98,7 +107,7 @@ body {
         padding-right: 35%;
     }
     .logoMenuItem {
-        font-size: 56px;
+        font-size: 48px;
     }
     .logoMenuNavigationContainer {
         display: flex;
