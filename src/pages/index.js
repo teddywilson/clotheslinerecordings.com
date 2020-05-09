@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import LogoMenu from "../components/logoMenu"
 
-const Index = () => {
+const Index = ({ location }) => {
   return (
     <Layout>
       <Helmet>
@@ -13,7 +13,7 @@ const Index = () => {
         <title>CLOTHESLINE | home</title>
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
-      <LogoMenu />
+      <LogoMenu location={location} />
     </Layout>
   )
 }

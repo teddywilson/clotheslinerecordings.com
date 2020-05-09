@@ -7,11 +7,11 @@ import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const ReleasesTemplate = ({ pageContext }) => {
+const ReleasesTemplate = ({ pageContext, location }) => {
   const { releases } = pageContext
   return (
     <Layout>
-      <LogoMenu />
+      <LogoMenu location={location} />
       <DisplayGridList>
         {releases.map((item, index) => {
           const release = item.node.frontmatter

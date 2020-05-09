@@ -23,6 +23,8 @@ const LogoMenu = () => {
     border: `8px dashed white`
   }
 
+  const isArtistsCurrent = true
+
   return (
     <div>
       <Image
@@ -35,10 +37,11 @@ const LogoMenu = () => {
       />
       <div className="logoMenuNavigationContainer">
         <Link
-          to="/artists"
+          to="/artists/"
           className="logoMenuItem"
           style={textStyles}
           activeStyle={activeTextStyles}
+          isCurrent={true}
         >
           Artists
         </Link>
@@ -46,7 +49,7 @@ const LogoMenu = () => {
           /
         </Link>
         <Link
-          to="/releases"
+          to="/releases/"
           className="logoMenuItem"
           style={textStyles}
           activeStyle={activeTextStyles}
