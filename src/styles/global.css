@@ -78,10 +78,11 @@ body {
 
 .socialIcon {
     cursor: pointer;
+    opacity: 75%;
 }
 
 .socialIcon:hover {
-    opacity: 80%;
+    opacity: 50%;
 }
 
 @media (min-width: 375px) {
