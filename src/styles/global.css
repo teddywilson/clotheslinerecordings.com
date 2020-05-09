@@ -76,6 +76,14 @@ body {
     transform: translateY(-35%);
 }
 
+.socialIcon {
+    cursor: pointer;
+}
+
+.socialIcon:hover {
+    opacity: 80%;
+}
+
 @media (min-width: 375px) {
     .displayCellContainer {
         padding-left: 16%;
