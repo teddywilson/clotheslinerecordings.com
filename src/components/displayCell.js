@@ -2,14 +2,17 @@ import React from "react"
 
 const DisplayCell = ({ image, title, subtitle, onClickListener }) => {
   // TODO: fetch this from GraphQL
-  const imageName = require("../../content/assets/" + image)
+  const imageHidden = image === undefined
+  const imageName =
+    image !== undefined ? require("../../content/assets/" + image) : ""
   return (
     <div className="displayCellContainer" onClick={onClickListener}>
       <div>
         <img
           src={imageName}
           style={{
-            width: "100%"
+            width: "100%",
+            hidden: { imageHidden }
           }}
         />
       </div>

@@ -10,12 +10,13 @@ import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const Index = ({ location }) => {
+const PageNotFound = ({ location }) => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(fileAbsolutePath: { regex: "/global/metadata/index/" }) {
         frontmatter {
-          description
+          pageNotFoundTitle
+          pageNotFoundSubtitle
         }
       }
     }
@@ -24,17 +25,20 @@ const Index = ({ location }) => {
     <Layout>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>CLOTHESLINE | home</title>
+        <title>CLOTHESLINE | :(</title>
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
       <LogoMenu location={location} />
       <DisplayGridList>
         <GridListTile>
-          <DisplayCell subtitle={data.markdownRemark.frontmatter.description} />
+          <DisplayCell
+            title={data.markdownRemark.frontmatter.pageNotFoundTitle}
+            subtitle={data.markdownRemark.frontmatter.pageNotFoundSubtitle}
+          />
         </GridListTile>
       </DisplayGridList>
     </Layout>
   )
 }
 
-export default Index
+export default PageNotFound
