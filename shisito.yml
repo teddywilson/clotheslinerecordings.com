@@ -1,13 +1,13 @@
 collections:
   -
     filepattern: content/artists/*/*.md
-    fields:
+    schema:
       - artistUrl: str
       - image: str
       - name: str
   -
     filepattern: content/releases/*/*.md
-    fields:
+    schema:
       - artist: str
       - bandcampUrl: str
       - date: str
