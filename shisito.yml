@@ -2,14 +2,22 @@ collections:
   -
     filepattern: content/artists/*/*.md
     schema:
-      - artistUrl: str
-      - image: str
-      - name: str
+      - artistUrl:
+        - type: str
+      - image:
+        - type: str
+      - name:
+        - type: str
   -
     filepattern: content/releases/*/*.md
     schema:
-      - artist: str
-      - bandcampUrl: str
-      - date: str
-      - image: str
-      - title: str
+      - artist:
+        - type: str
+      - bandcampUrl:
+        - type: str
+      - date: 
+        - type: str
+      - image:
+        - type: str
+      - title:
+        - type: str
