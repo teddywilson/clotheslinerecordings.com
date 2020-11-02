@@ -8,4 +8,4 @@ jobs:
     # Markdown validation tests
     steps:
       - uses: actions/checkout@v1
-      - uses: teddywilson/shisito-markdown-validation@v1.0.4
+      - uses: teddywilson/shisito-markdown-validation@v1.0.6
