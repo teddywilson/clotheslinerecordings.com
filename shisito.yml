@@ -1,0 +1,15 @@
+collections:
+  -
+    filepattern: content/artists/*/*.md
+    fields:
+      - artistUrl: str
+      - image: str
+      - name: str
+  -
+    filepattern: content/releases/*/*.md
+    fields:
+      - artist: str
+      - bandcampUrl: str
+      - date: str
+      - image: str
+      - title: str

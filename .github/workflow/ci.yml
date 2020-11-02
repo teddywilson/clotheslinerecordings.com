@@ -1,0 +1,10 @@
+name: CI
+on: [push]
+
+jobs:
+  build-library:
+    runs-on: ubuntu-latest
+    name: build-library
+    steps:
+      - uses: actions/checkout@v1
+      - uses: teddywilson/shisito@v1.0.0
