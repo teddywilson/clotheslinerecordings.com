@@ -15,8 +15,7 @@ collections:
     filepattern: content/releases/*/*.md
     schema:
       - artist:
-        - type: str
-        - unique: true        
+        - type: str     
       - bandcampUrl:
         - type: str
         - unique: true        
