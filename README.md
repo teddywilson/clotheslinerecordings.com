@@ -1,7 +1,5 @@
 # Clothesline Recordings Website
 
-NOTE: this is only in the very beginning phases of development
-
 ## Usage
 ```
 gatsby clean
@@ -9,7 +7,4 @@ gatsby develop
 ```
 
 ## Deploy
-```
-./deploy.sh
-```
-
+The site is automatically deployed on master pushes via the `.github/workflows/ci.yml` Github Workflow.
