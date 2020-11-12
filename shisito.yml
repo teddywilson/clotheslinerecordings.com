@@ -4,20 +4,27 @@ collections:
     schema:
       - artistUrl:
         - type: str
+        - unique: true
       - image:
         - type: str
+        - unique: true        
       - name:
         - type: str
+        - unique: true        
   -
     filepattern: content/releases/*/*.md
     schema:
       - artist:
-        - type: str
+        - type: str     
       - bandcampUrl:
         - type: str
+        - unique: true        
       - date: 
         - type: str
+        - unique: true        
       - image:
         - type: str
+        - unique: true        
       - title:
         - type: str
+        - unique: true
