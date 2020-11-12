@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 
-# TODO(teddywilson) This is super inefficient. Could use outsourced actions if it really becomes an issue.
+# TODO(teddywilson) This is super inefficient. Could use outsourced actions/Yarn cache if it really becomes an issue.
 jobs:
   markdown-validation-tests:
     runs-on: ubuntu-latest
