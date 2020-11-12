@@ -4,7 +4,6 @@ on: [push]
 jobs:
   markdown-validation-tests:
     runs-on: ubuntu-latest
-    name: build-library
     steps:
       - uses: actions/checkout@v1
       - uses: teddywilson/shisito-markdown-validation@v1.1.10
@@ -24,5 +23,5 @@ jobs:
       run: sudo npm install -g gatsby-cli
       id: install-gatsby
     - name: Run deployment script
-      run: ./deploy
+      run: /home/runner/work/clothesline-recordings/clothesline-recordings/deploy
       id: deployment-script
