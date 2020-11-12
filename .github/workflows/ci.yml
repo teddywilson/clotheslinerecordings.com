@@ -14,6 +14,7 @@ jobs:
     needs: markdown-validation-tests
     if: github.ref == 'refs/heads/master'
     steps:
+    - uses: actions/checkout@v2
     - name: Read .nvmrc
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
       id: nvm
@@ -25,5 +26,5 @@ jobs:
       run: sudo npm install -g gatsby-cli
       id: install-gatsby
     - name: Run deployment script
-      run: ls
+      run: sh deploy.sh
       id: deployment-script
