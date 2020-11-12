@@ -5,4 +5,5 @@
 
 gatsby clean
 gatsby build
-firebase deploy
+
+firebase deploy --token ${1}
