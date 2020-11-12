@@ -2,5 +2,5 @@ Image stuff is super hacky right now. I don't really give a shit, but if images 
 
 Can be done pretty easily (on Mac OSX) via:
 ```
-sips -Z 500 .
+sips -Z 500 *
 ```
