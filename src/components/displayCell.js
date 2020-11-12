@@ -12,7 +12,8 @@ const DisplayCell = ({ image, title, subtitle, onClickListener }) => {
           src={imageName}
           style={{
             width: "100%",
-            hidden: { imageHidden }
+            maxWidth: 500,
+            hidden: { imageHidden },
           }}
         />
       </div>

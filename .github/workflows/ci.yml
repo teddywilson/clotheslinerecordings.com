@@ -2,10 +2,27 @@ name: CI
 on: [push]
 
 jobs:
-  build-library:
+  markdown-validation-tests:
     runs-on: ubuntu-latest
     name: build-library
-    # Markdown validation tests
     steps:
       - uses: actions/checkout@v1
       - uses: teddywilson/shisito-markdown-validation@v1.1.10
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    steps:
+    - name: Read .nvmrc
+      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      id: nvm
+    - name: Use Node.js ${{ steps.nvm.outputs.NVMRC }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: "${{ steps.nvm.outputs.NVMRC }}"
+    - name: Install Gatsby CLI
+      run: npm install -g gatsby-cli
+      id: install-gatsby
+    - name: Run deployment script
+      run: ./deploy
+      id: deployment-script
