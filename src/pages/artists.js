@@ -1,5 +1,7 @@
 import React from "react"
 
+import { graphql } from "gatsby"
+
 import DisplayCell from "../components/displayCell"
 import DisplayGridList from "../components/displayGridList"
 import Layout from "../components/layout"
@@ -7,14 +9,14 @@ import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const ArtistsTemplate = ({ pageContext, location }) => {
-  const { artists } = pageContext
+const Artists = ({ data, location }) => {
+  const artists = data.allMarkdownRemark.nodes
   return (
     <Layout>
       <LogoMenu location={location} />
       <DisplayGridList>
         {artists.map((item, index) => {
-          const artist = item.node.frontmatter
+          const artist = item.frontmatter
           return (
             <GridListTile key={index}>
               <DisplayCell
@@ -23,7 +25,7 @@ const ArtistsTemplate = ({ pageContext, location }) => {
                 image={artist.image}
                 title={artist.name}
                 onClickListener={() => {
-                  window.open(item.node.frontmatter.artistUrl, "_blank")
+                  window.open(artist.artistUrl, "_blank")
                 }}
               />
             </GridListTile>
@@ -34,4 +36,22 @@ const ArtistsTemplate = ({ pageContext, location }) => {
   )
 }
 
-export default ArtistsTemplate
+export default Artists
+
+export const pageQuery = graphql`
+  {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/artists/" } }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          artistUrl
+          image
+          name
+        }
+      }
+    }
+  }
+`
