@@ -10,7 +10,17 @@ import LogoMenu from "../components/logoMenu"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const ReleasesTemplate = ({ data, location }) => {
+  // TODO(teddywilson) This sort should not be necessary but Gatsby sort it broken
+  // https://github.com/gatsbyjs/gatsby/issues/28047
   const releases = data.allMarkdownRemark.nodes
+    .sort((releaseA, releaseB) => {
+      return (
+        new Date(releaseA.frontmatter.date).getTime() -
+        new Date(releaseB.frontmatter.date).getTime()
+      )
+    })
+    .reverse()
+
   return (
     <Layout>
       <LogoMenu location={location} />
@@ -40,6 +50,7 @@ const ReleasesTemplate = ({ data, location }) => {
 
 export default ReleasesTemplate
 
+// TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
 export const pageQuery = graphql`
   query {
     site {
@@ -47,10 +58,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/releases/" } }
-      sort: { fields: [frontmatter___date], order: [DESC] }
-    ) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/releases/" } }) {
       nodes {
         excerpt
         fields {
@@ -63,7 +71,6 @@ export const pageQuery = graphql`
           catalogue
           image
           title
-          index
         }
       }
     }

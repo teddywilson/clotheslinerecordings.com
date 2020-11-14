@@ -10,7 +10,20 @@ import LogoMenu from "../components/logoMenu"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const Artists = ({ data, location }) => {
-  const artists = data.allMarkdownRemark.nodes
+  // TODO(teddywilson) This sort should not be necessary but Gatsby sort it broken
+  // https://github.com/gatsbyjs/gatsby/issues/28047
+  const artists = data.allMarkdownRemark.nodes.sort((artistA, artistB) => {
+    if (
+      artistA.frontmatter.name.toLowerCase() ===
+      artistB.frontmatter.name.toLowerCase()
+    ) {
+      return 0
+    }
+    return artistA.frontmatter.name.toLowerCase() <
+      artistB.frontmatter.name.toLowerCase()
+      ? -1
+      : 1
+  })
   return (
     <Layout>
       <LogoMenu location={location} />
@@ -38,6 +51,7 @@ const Artists = ({ data, location }) => {
 
 export default Artists
 
+// TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
 export const pageQuery = graphql`
   {
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/artists/" } }) {
