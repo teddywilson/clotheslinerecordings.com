@@ -10,7 +10,7 @@ import LogoMenu from "../components/logoMenu"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const Releases = ({ data, location }) => {
-  // TODO(teddywilson) This sort should not be necessary but Gatsby sort it broken
+  // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const releases = data.allMarkdownRemark.nodes
     .sort((releaseA, releaseB) => {
@@ -26,7 +26,7 @@ const Releases = ({ data, location }) => {
       <DisplayGridList>
         {releases.map((item, index) => {
           const release = item.frontmatter
-          const subtitle = release.artist + ", " + release.catalogue
+          const subtitle = `${release.artist}, ${release.catalogue}`
           return (
             <GridListTile key={index}>
               <DisplayCell
