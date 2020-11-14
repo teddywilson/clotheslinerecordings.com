@@ -9,7 +9,7 @@ import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const ReleasesTemplate = ({ data, location }) => {
+const Releases = ({ data, location }) => {
   // TODO(teddywilson) This sort should not be necessary but Gatsby sort it broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const releases = data.allMarkdownRemark.nodes
@@ -48,7 +48,7 @@ const ReleasesTemplate = ({ data, location }) => {
   )
 }
 
-export default ReleasesTemplate
+export default Releases
 
 // TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
 export const pageQuery = graphql`
