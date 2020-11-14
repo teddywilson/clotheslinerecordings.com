@@ -36,9 +36,7 @@ const Artists = ({ data }) => {
                 index={index}
                 image={artist.image}
                 title={artist.name}
-                onClickListener={() => {
-                  window.open(artist.artistUrl, "_blank")
-                }}
+                url={artist.artistUrl}
               />
             </GridListTile>
           )

@@ -34,9 +34,7 @@ const Releases = ({ data }) => {
                 image={release.image}
                 title={release.title}
                 subtitle={subtitle}
-                onClickListener={() => {
-                  window.open(release.bandcampUrl, "_blank")
-                }}
+                url={release.bandcampUrl}
               />
             </GridListTile>
           )
