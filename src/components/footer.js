@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faFacebook,
   faInstagram,
-  faYoutube
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
   const address = data.markdownRemark.frontmatter.address
 
   const email = data.markdownRemark.frontmatter.email
-  const hred = "mailto:".concat(email)
+  const emailHref = "mailto:".concat(email)
 
   const facebookUrl = data.markdownRemark.frontmatter.facebookUrl
   const instagramUrl = data.markdownRemark.frontmatter.instagramUrl
@@ -36,12 +36,12 @@ const Footer = () => {
     <div
       className="footerContainer"
       style={{
-        backgroundColor: "white"
+        backgroundColor: "white",
       }}
     >
       <div className="footerHeader">Contact</div>
       <div className="footerSubtext">
-        <a href={hred}>{email}</a>
+        <a href={emailHref}>{email}</a>
       </div>
       <div className="footerSubtext">{address}</div>
       <div
@@ -49,7 +49,7 @@ const Footer = () => {
           flexDirection: "column",
           flex: 1,
           width: "100%",
-          paddingTop: 8
+          paddingTop: 8,
         }}
       >
         <FontAwesomeIcon
@@ -66,7 +66,7 @@ const Footer = () => {
           size="lg"
           style={{
             paddingLeft: 4,
-            paddingRight: 4
+            paddingRight: 4,
           }}
           onClick={() => {
             window.open(instagramUrl, "_blank")

@@ -10,7 +10,7 @@ import LogoMenu from "../components/logoMenu"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const Artists = ({ data, location }) => {
-  // TODO(teddywilson) This sort should not be necessary but Gatsby sort it broken
+  // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const artists = data.allMarkdownRemark.nodes.sort((artistA, artistB) => {
     if (
