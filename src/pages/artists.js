@@ -27,8 +27,7 @@ const Artists = ({ data }) => {
               <DisplayCell
                 item={item}
                 key={index}
-                index={index}
-                image={artist.image}
+                imageFluid={artist.image.childImageSharp.fluid}
                 title={artist.name}
                 url={artist.artistUrl}
               />
@@ -43,6 +42,7 @@ const Artists = ({ data }) => {
 export default Artists
 
 // TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
+// TODO(teddywilson) Use string interpolation for maxWidth, though it's not currently supported
 export const pageQuery = graphql`
   {
     allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/artists/" } }) {
@@ -53,8 +53,14 @@ export const pageQuery = graphql`
         }
         frontmatter {
           artistUrl
-          image
           name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

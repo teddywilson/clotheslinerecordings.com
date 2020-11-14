@@ -1,9 +1,11 @@
 import React from "react"
 
-const DisplayCell = ({ image, index, title, subtitle, url }) => {
-  // TODO(teddywilson) Fetch this from GraphQL/optimize
-  const imageHidden = image === undefined
-  const imageName = image !== undefined ? require("../../content/assets/" + image) : ""
+import Img from "gatsby-image"
+
+const MAX_IMAGE_WIDTH = 500
+
+const DisplayCell = ({ imageFluid, title, subtitle, url }) => {
+  const imageHidden = imageFluid === undefined
   const onClickListener = () => {
     window.open(url, "_blank")
   }
@@ -15,12 +17,10 @@ const DisplayCell = ({ image, index, title, subtitle, url }) => {
       onKeyDown={onClickListener}
     >
       <div>
-        <img
-          src={imageName}
-          alt=""
+        <Img
+          fluid={imageFluid}
           style={{
-            width: "100%",
-            maxWidth: 500,
+            maxWidth: MAX_IMAGE_WIDTH,
             hidden: { imageHidden },
           }}
         />

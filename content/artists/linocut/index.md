@@ -1,5 +1,5 @@
 ---
 artistUrl: "https://linocutlinocut.bandcamp.com/releases"
-image: linocut.jpg
+image: "../../assets/linocut.jpg"
 name: "Linocut"
 ---

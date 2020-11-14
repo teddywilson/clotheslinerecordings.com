@@ -1,5 +1,5 @@
 ---
 artistUrl: "https://reynolds-band.bandcamp.com/"
-image: reynolds.jpeg
-name: reynolds
+image: "../../assets/reynolds.jpeg"
+name: "reynolds"
 ---

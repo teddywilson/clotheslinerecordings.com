@@ -8,9 +8,8 @@ import Layout from "../components/layout"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
+// TODO(teddywilson) See TODOs in ./artists.js, as they are congruent with this file
 const Releases = ({ data }) => {
-  // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
-  // https://github.com/gatsbyjs/gatsby/issues/28047
   const releases = data.allMarkdownRemark.nodes
     .sort((releaseA, releaseB) => {
       return (
@@ -30,8 +29,7 @@ const Releases = ({ data }) => {
               <DisplayCell
                 item={item}
                 key={index}
-                index={index}
-                image={release.image}
+                imageFluid={release.image.childImageSharp.fluid}
                 title={release.title}
                 subtitle={subtitle}
                 url={release.bandcampUrl}
@@ -46,7 +44,6 @@ const Releases = ({ data }) => {
 
 export default Releases
 
-// TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
 export const pageQuery = graphql`
   query {
     site {
@@ -65,8 +62,14 @@ export const pageQuery = graphql`
           artist
           bandcampUrl
           catalogue
-          image
           title
+          image {
+            childImageSharp {
+              fluid(maxWidth: 500) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
