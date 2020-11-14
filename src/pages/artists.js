@@ -5,11 +5,10 @@ import { graphql } from "gatsby"
 import DisplayCell from "../components/displayCell"
 import DisplayGridList from "../components/displayGridList"
 import Layout from "../components/layout"
-import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const Artists = ({ data, location }) => {
+const Artists = ({ data }) => {
   // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const artists = data.allMarkdownRemark.nodes.sort((artistA, artistB) => {
@@ -26,7 +25,6 @@ const Artists = ({ data, location }) => {
   })
   return (
     <Layout>
-      <LogoMenu location={location} />
       <DisplayGridList>
         {artists.map((item, index) => {
           const artist = item.frontmatter
@@ -35,6 +33,7 @@ const Artists = ({ data, location }) => {
               <DisplayCell
                 item={item}
                 key={index}
+                index={index}
                 image={artist.image}
                 title={artist.name}
                 onClickListener={() => {

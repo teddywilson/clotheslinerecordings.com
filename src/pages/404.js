@@ -6,11 +6,10 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import DisplayCell from "../components/displayCell"
 import DisplayGridList from "../components/displayGridList"
-import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const PageNotFound = ({ location }) => {
+const PageNotFound = () => {
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(fileAbsolutePath: { regex: "/global/metadata/index/" }) {
@@ -28,7 +27,6 @@ const PageNotFound = ({ location }) => {
         <title>CLOTHESLINE | :(</title>
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
-      <LogoMenu location={location} />
       <DisplayGridList>
         <GridListTile>
           <DisplayCell

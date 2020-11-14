@@ -5,11 +5,10 @@ import { graphql } from "gatsby"
 import DisplayCell from "../components/displayCell"
 import DisplayGridList from "../components/displayGridList"
 import Layout from "../components/layout"
-import LogoMenu from "../components/logoMenu"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-const Releases = ({ data, location }) => {
+const Releases = ({ data }) => {
   // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const releases = data.allMarkdownRemark.nodes
@@ -22,7 +21,6 @@ const Releases = ({ data, location }) => {
     .reverse()
   return (
     <Layout>
-      <LogoMenu location={location} />
       <DisplayGridList>
         {releases.map((item, index) => {
           const release = item.frontmatter
@@ -30,8 +28,9 @@ const Releases = ({ data, location }) => {
           return (
             <GridListTile key={index}>
               <DisplayCell
-                key={index}
                 item={item}
+                key={index}
+                index={index}
                 image={release.image}
                 title={release.title}
                 subtitle={subtitle}

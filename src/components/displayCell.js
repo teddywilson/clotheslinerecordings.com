@@ -1,6 +1,6 @@
 import React from "react"
 
-const DisplayCell = ({ image, key, title, subtitle, onClickListener }) => {
+const DisplayCell = ({ image, index, title, subtitle, onClickListener }) => {
   // TODO(teddywilson) Fetch this from GraphQL/optimize
   const imageHidden = image === undefined
   const imageName =
@@ -9,7 +9,7 @@ const DisplayCell = ({ image, key, title, subtitle, onClickListener }) => {
     <div
       className="displayCellContainer"
       role="gridcell"
-      tabIndex={key}
+      tabIndex={index}
       onClick={onClickListener}
       onKeyDown={onClickListener}
     >
