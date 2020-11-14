@@ -20,7 +20,6 @@ const Releases = ({ data, location }) => {
       )
     })
     .reverse()
-
   return (
     <Layout>
       <LogoMenu location={location} />
