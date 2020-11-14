@@ -12,16 +12,10 @@ const Artists = ({ data }) => {
   // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
   // https://github.com/gatsbyjs/gatsby/issues/28047
   const artists = data.allMarkdownRemark.nodes.sort((artistA, artistB) => {
-    if (
-      artistA.frontmatter.name.toLowerCase() ===
-      artistB.frontmatter.name.toLowerCase()
-    ) {
+    if (artistA.frontmatter.name.toLowerCase() === artistB.frontmatter.name.toLowerCase()) {
       return 0
     }
-    return artistA.frontmatter.name.toLowerCase() <
-      artistB.frontmatter.name.toLowerCase()
-      ? -1
-      : 1
+    return artistA.frontmatter.name.toLowerCase() < artistB.frontmatter.name.toLowerCase() ? -1 : 1
   })
   return (
     <Layout>

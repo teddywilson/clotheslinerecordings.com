@@ -3,8 +3,7 @@ import React from "react"
 const DisplayCell = ({ image, index, title, subtitle, url }) => {
   // TODO(teddywilson) Fetch this from GraphQL/optimize
   const imageHidden = image === undefined
-  const imageName =
-    image !== undefined ? require("../../content/assets/" + image) : ""
+  const imageName = image !== undefined ? require("../../content/assets/" + image) : ""
   const onClickListener = () => {
     window.open(url, "_blank")
   }

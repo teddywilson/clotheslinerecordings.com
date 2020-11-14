@@ -16,15 +16,15 @@ const LogoMenu = () => {
   `)
 
   const textStyles = {
-    borderBottom: `8px solid black`
+    borderBottom: `8px solid black`,
   }
 
   const activeTextStylesDashedBorder = {
-    borderBottom: `8px dashed white`
+    borderBottom: `8px dashed white`,
   }
 
   const activeTextStylesSolidBorder = {
-    borderBottom: `8px solid white`
+    borderBottom: `8px solid white`,
   }
 
   return (
@@ -36,7 +36,7 @@ const LogoMenu = () => {
             margin: 0,
             marginTop: 16,
             marginLeft: 48,
-            padding: 0
+            padding: 0,
           }}
         />
       </Link>

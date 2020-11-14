@@ -22,9 +22,7 @@ const Index = () => {
         <title>CLOTHESLINE | home</title>
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
-      <div className="indexBodyText">
-        {data.markdownRemark.frontmatter.description}
-      </div>
+      <div className="indexBodyText">{data.markdownRemark.frontmatter.description}</div>
     </Layout>
   )
 }
