@@ -1,7 +1,7 @@
 import React from "react"
 
 const DisplayCell = ({ image, key, title, subtitle, onClickListener }) => {
-  // TODO: fetch this from GraphQL
+  // TODO(teddywilson) Fetch this from GraphQL/optimize
   const imageHidden = image === undefined
   const imageName =
     image !== undefined ? require("../../content/assets/" + image) : ""
