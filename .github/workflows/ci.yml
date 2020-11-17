@@ -2,15 +2,8 @@ name: CI
 on: [push]
 
 # TODO(teddywilson) This is super inefficient. Could use outsourced actions/Yarn cache if it really becomes an issue.
+# TODO(teddywilson) Renable Shisito once date time is implemented: https://github.com/teddywilson/shisito-markdown-validation/issues/10
 jobs:
-#  Disabled until the following is resolved: 
-#  https://github.com/teddywilson/shisito-markdown-validation/issues/10
-#
-#  markdown-validation-tests:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v1
-#      - uses: teddywilson/shisito-markdown-validation@v1.1.10
   deploy:
     runs-on: ubuntu-latest
     needs: markdown-validation-tests
