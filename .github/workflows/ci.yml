@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-
 # TODO(teddywilson) This is super inefficient. Could use outsourced actions/Yarn cache if it really becomes an issue.
 # TODO(teddywilson) Renable Shisito once date time is implemented: https://github.com/teddywilson/shisito-markdown-validation/issues/10
 jobs:
