@@ -1,5 +1,5 @@
 ---
-date: 2020-04-10T00:00:00.000Z
+date: "2020-04-10T00:00:00.000Z"
 artist: "Linocut"
 bandcampUrl: "https://linocutlinocut.bandcamp.com/album/linocut"
 catalogue: "CLR-003"

@@ -9,7 +9,14 @@ import Layout from "../components/layout"
 import GridListTile from "@material-ui/core/GridListTile"
 
 const Artists = ({ data }) => {
-  const artists = data.allMarkdownRemark.nodes
+  // TODO(teddywilson) This sort should not be necessary but Gatsby sort is broken
+  // https://github.com/gatsbyjs/gatsby/issues/28047
+  const artists = data.allMarkdownRemark.nodes.sort((artistA, artistB) => {
+    if (artistA.frontmatter.name.toLowerCase() === artistB.frontmatter.name.toLowerCase()) {
+      return 0
+    }
+    return artistA.frontmatter.name.toLowerCase() < artistB.frontmatter.name.toLowerCase() ? -1 : 1
+  })
   return (
     <Layout>
       <DisplayGridList>
@@ -34,12 +41,11 @@ const Artists = ({ data }) => {
 
 export default Artists
 
+// TODO(teddywilson) See todo above; add sort to GraphQL query once bug is fixed
+// TODO(teddywilson) Use string interpolation for maxWidth, though it's not currently supported
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/artists/" } }
-      sort: { fields: [frontmatter___name, frontmatter___title], order: ASC }
-    ) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/artists/" } }) {
       nodes {
         excerpt
         fields {
