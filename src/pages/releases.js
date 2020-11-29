@@ -8,16 +8,8 @@ import Layout from "../components/layout"
 
 import GridListTile from "@material-ui/core/GridListTile"
 
-// TODO(teddywilson) See TODOs in ./artists.js, as they are congruent with this file
 const Releases = ({ data }) => {
   const releases = data.allMarkdownRemark.nodes
-    .sort((releaseA, releaseB) => {
-      return (
-        new Date(releaseA.frontmatter.date).getTime() -
-        new Date(releaseB.frontmatter.date).getTime()
-      )
-    })
-    .reverse()
   return (
     <Layout>
       <DisplayGridList>
@@ -51,7 +43,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/releases/" } }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/releases/" } }
+      sort: { fields: [frontmatter___date, frontmatter___title], order: DESC }
+    ) {
       nodes {
         excerpt
         fields {
