@@ -1,17 +1,11 @@
 import React from "react"
 
-import { useStaticQuery, graphql, navigate} from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { isBrowser } from 'react-device-detect';
 
 import Layout from "../components/layout"
 
 const Index = () => {
-  // Don't show this page on desktop
-  if (isBrowser) {
-    navigate('/artists')
-    return null
-  }
   const data = useStaticQuery(graphql`
     query {
       markdownRemark(fileAbsolutePath: { regex: "/global/metadata/index/" }) {
