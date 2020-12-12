@@ -42,7 +42,7 @@ const LogoMenu = () => {
       </Link>
       <div className="logoMenuNavigationContainer">
         <Link
-          to="/artists/"
+          to="/artists"
           className="logoMenuItem"
           style={textStyles}
           activeStyle={activeTextStylesDashedBorder}
@@ -53,7 +53,7 @@ const LogoMenu = () => {
           /
         </Link>
         <Link
-          to="/releases/"
+          to="/releases"
           className="logoMenuItem"
           style={textStyles}
           activeStyle={activeTextStylesSolidBorder}
