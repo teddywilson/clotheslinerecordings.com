@@ -8,4 +8,4 @@ gatsby develop
 ```
 
 ## Deploy
-The site is automatically deployed on master pushes via the `.github/workflows/ci.yml` Github Workflow.
+The site is automatically deployed to Firebase on pushes to `main` via the `.github/workflows/ci.yml` Github Workflow and `deploy.sh` script.
