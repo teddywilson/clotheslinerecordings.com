@@ -11,6 +11,7 @@ const Index = () => {
       markdownRemark(fileAbsolutePath: { regex: "/global/metadata/index/" }) {
         frontmatter {
           description
+          demos
         }
       }
     }
@@ -23,6 +24,7 @@ const Index = () => {
         <link rel="canonical" href="http://clotheslinerecordings.com" />
       </Helmet>
       <div className="indexBodyText">{data.markdownRemark.frontmatter.description}</div>
+      <div className="indexBodyText">{data.markdownRemark.frontmatter.demos}</div>
     </Layout>
   )
 }

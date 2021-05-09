@@ -2,6 +2,7 @@
 
 ## Usage
 ```
+yarn install
 gatsby clean
 gatsby develop
 ```
