@@ -6,4 +6,6 @@
 gatsby clean
 gatsby build
 
+firebase logout
+firebase login
 firebase deploy --token ${1}
