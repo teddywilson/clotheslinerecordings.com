@@ -1,34 +1,14 @@
-name: CI
+name: Gatsby Publish
+
 on:
   push:
     branches:
       - main
-# TODO(teddywilson) This is super inefficient. Could use outsourced actions/Yarn cache if it really becomes an issue.
-# TODO(teddywilson) Renable Shisito once date time is implemented: https://github.com/teddywilson/shisito-markdown-validation/issues/10
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Read .nvmrc
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-      id: nvm
-    - name: Use Node.js ${{ steps.nvm.outputs.NVMRC }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: "${{ steps.nvm.outputs.NVMRC }}"
-    - name: Install Yarn dependencies
-      run: yarn install
-      id: yarn-install      
-    - name: Install Gatsby CLI
-      run: sudo npm install -g gatsby-cli
-      id: install-gatsby
-    - name: Install Firebase CLI
-      run: sudo npm install -g firebase-tools
-      id: install-firebase
-    - name: Install Firebase dependencies
-      run: cd functions && npm install && cd ../
-      id: install-firebase-dependencies           
-    - name: Run deployment script
-      run: sudo sh deploy.sh ${{ secrets.FIREBASE_TOKEN }}
-      id: deployment-script
+      - uses: actions/checkout@v1
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}

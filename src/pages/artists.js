@@ -37,8 +37,8 @@ export default Artists
 // TODO(teddywilson) Use string interpolation for maxWidth, though it's not currently supported
 export const pageQuery = graphql`
   {
-    allMarkdownRemark(filter: { 
-      fileAbsolutePath: { regex: "/artists/" } }
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/artists/" } }
       sort: { fields: [frontmatter___name, frontmatter___title], order: ASC }
     ) {
       nodes {
