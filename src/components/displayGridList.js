@@ -6,7 +6,7 @@ const DisplayGridList = ({ children }) => {
   return (
     <GridList
       cellHeight="auto"
-      cols={1}
+      cols={3}
       style={{
         margin: 0,
         padding: 0,

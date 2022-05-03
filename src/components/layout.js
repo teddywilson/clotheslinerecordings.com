@@ -5,10 +5,14 @@ import LogoMenu from "./logoMenu"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div style={{
+      marginLeft: 300,
+      marginRight: 300
+    }}>
       <LogoMenu />
-      <main>{children}</main>
-      <Footer />
+      <main
+      >{children}</main>
+      {/* <Footer /> */}
     </div>
   )
 }
