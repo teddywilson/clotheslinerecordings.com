@@ -28,15 +28,12 @@ const LogoMenu = () => {
   }
 
   return (
-    <div style={{
-      marginLeft: -5,
-    }}>
+    <div>
       <Link to="/">
         <Image
           fixed={data.avatar.childImageSharp.fixed}
           style={{
             margin: 0,
-            marginTop: 16,
             padding: 0,
           }}
         />
